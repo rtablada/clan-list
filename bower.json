@@ -1,0 +1,15 @@
+{
+  "name": "clan-list",
+  "version": "0.0.0",
+  "authors": [
+    "Ryan Tablada <ryan.tablada@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
