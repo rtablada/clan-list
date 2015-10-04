@@ -12,7 +12,39 @@
 */
 
 Route::get('/', function () {
-    $users = App\User::with('clans', 'friendsOut', 'friendsIn')->paginate(25);
+
+    $query = new App\User();
+
+    if ($orderBy = Request::get('order_by')) {
+      switch ($orderBy) {
+        case 'friends':
+          $query = $query
+            ->groupBy('users.id')
+            ->leftJoin('friends', function($join) {
+              $join->on('users.id', '=', 'friends.user_id_1')
+                ->orOn('users.id', '=', 'friends.user_id_2');
+              })
+            ->orderBy(DB::raw('COUNT(friends.user_id_1)'), 'desc');
+          break;
+        case 'clans':
+          $query = $query
+            ->groupBy('users.id')
+            ->leftJoin('clan_user', function($join) {
+              $join->on('users.id', '=', 'clan_user.user_id');
+              })
+            ->orderBy(DB::raw('COUNT(clan_user.user_id)'), 'desc');
+          break;
+
+        default:
+          $query = $query
+            ->groupBy('users.id')
+            ->orderBy($orderBy, 'desc');
+          break;
+      }
+
+    }
+
+    $users = $query->paginate(25);
 
     $clansInfo = $users->reduce(function($carry, $user) {
         $userClans = $user->clans;
