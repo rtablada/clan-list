@@ -8238,4 +8238,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .white-card {
   border-top: 1px solid #e0e0e0; }
 
+nav {
+  margin: 0.5rem 0 0; }
+
 /*# sourceMappingURL=app.css.map */

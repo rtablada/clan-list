@@ -36,5 +36,9 @@ Route::get('/', function () {
 
     $topTen = App\User::orderBy('score', 'desc')->limit(10)->get();
 
-    return view('results', compact('users', 'clansInfo', 'topTen'));
+    $filterOptions = [
+      'Order By' => ['Name', 'Score', 'Friends', 'Clans'],
+    ];
+
+    return view('results', compact('users', 'clansInfo', 'topTen', 'filterOptions'));
 });

@@ -17,5 +17,6 @@ var paths = {
 
 elixir(function(mix) {
   mix.sass('app.scss', 'public/css/', {includePaths: [`${paths.materialize}/sass`]})
-    .copy(`${paths.materialize}/font/**`, 'public/fonts');
+    .copy(`${paths.materialize}/font/**`, 'public/font')
+    .copy(`${paths.materialize}/dist/js/materialize.min.js`, 'public/js');
 });
