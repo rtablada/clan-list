@@ -34,5 +34,7 @@ Route::get('/', function () {
         }, $carry);
     }, new Illuminate\Support\Collection());
 
-    return view('results', compact('users', 'clansInfo'));
+    $topTen = App\User::orderBy('score', 'desc')->limit(10)->get();
+
+    return view('results', compact('users', 'clansInfo', 'topTen'));
 });

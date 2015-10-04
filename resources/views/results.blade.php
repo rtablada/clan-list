@@ -15,8 +15,8 @@
     </ul>
   </div>
 
-  <div class="col s12 m6">
-    <table>
+  <div class="col s12 m6 white-card">
+    <table class="card-content">
       <thead>
         <tr>
           <th>Username</th>
@@ -40,7 +40,15 @@
 
   <div class="col s12 m3">
     <div class="row">
-      Top 10
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Top 10</h4></li>
+        @foreach($topTen as $user)
+          <li class="collection-item">
+            {{$user->name}}
+            <span class="badge">{{$user->score}}</span>
+          </li>
+        @endforeach
+      </ul>
     </div>
     <div class="row">
       Friends

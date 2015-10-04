@@ -2029,7 +2029,7 @@ ul {
 .z-depth-0 {
   box-shadow: none !important; }
 
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+.z-depth-1, nav, .card-panel, .card, .white-card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
@@ -5509,51 +5509,51 @@ small {
   border-radius: 2px;
   background-color: #fff; }
 
-.card {
+.card, .white-card {
   position: relative;
   overflow: hidden;
   margin: 0.5rem 0 1rem 0;
   background-color: #fff;
   transition: box-shadow 0.25s;
   border-radius: 2px; }
-  .card .card-title {
+  .card .card-title, .white-card .card-title {
     color: #fff;
     font-size: 24px;
     font-weight: 300; }
-    .card .card-title.activator {
+    .card .card-title.activator, .white-card .card-title.activator {
       cursor: pointer; }
-  .card.small, .card.medium, .card.large {
+  .card.small, .small.white-card, .card.medium, .medium.white-card, .card.large, .large.white-card {
     position: relative; }
-    .card.small .card-image, .card.medium .card-image, .card.large .card-image {
+    .card.small .card-image, .small.white-card .card-image, .card.medium .card-image, .medium.white-card .card-image, .card.large .card-image, .large.white-card .card-image {
       overflow: hidden; }
-    .card.small .card-content, .card.medium .card-content, .card.large .card-content {
+    .card.small .card-content, .small.white-card .card-content, .card.medium .card-content, .medium.white-card .card-content, .card.large .card-content, .large.white-card .card-content {
       overflow: hidden; }
-    .card.small .card-action, .card.medium .card-action, .card.large .card-action {
+    .card.small .card-action, .small.white-card .card-action, .card.medium .card-action, .medium.white-card .card-action, .card.large .card-action, .large.white-card .card-action {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0; }
-  .card.small {
+  .card.small, .small.white-card {
     height: 300px; }
-    .card.small .card-image {
+    .card.small .card-image, .small.white-card .card-image {
       height: 150px; }
-    .card.small .card-content {
+    .card.small .card-content, .small.white-card .card-content {
       height: 150px; }
-  .card.medium {
+  .card.medium, .medium.white-card {
     height: 400px; }
-    .card.medium .card-image {
+    .card.medium .card-image, .medium.white-card .card-image {
       height: 250px; }
-    .card.medium .card-content {
+    .card.medium .card-content, .medium.white-card .card-content {
       height: 150px; }
-  .card.large {
+  .card.large, .large.white-card {
     height: 500px; }
-    .card.large .card-image {
+    .card.large .card-image, .large.white-card .card-image {
       height: 330px; }
-    .card.large .card-content {
+    .card.large .card-content, .large.white-card .card-content {
       height: 170px; }
-  .card .card-image {
+  .card .card-image, .white-card .card-image {
     position: relative; }
-    .card .card-image img {
+    .card .card-image img, .white-card .card-image img {
       display: block;
       border-radius: 2px 2px 0 0;
       position: relative;
@@ -5562,30 +5562,30 @@ small {
       top: 0;
       bottom: 0;
       width: 100%; }
-    .card .card-image .card-title {
+    .card .card-image .card-title, .white-card .card-image .card-title {
       position: absolute;
       bottom: 0;
       left: 0;
       padding: 20px; }
-  .card .card-content {
+  .card .card-content, .white-card .card-content {
     padding: 20px;
     border-radius: 0 0 2px 2px; }
-    .card .card-content p {
+    .card .card-content p, .white-card .card-content p {
       margin: 0;
       color: inherit; }
-    .card .card-content .card-title {
+    .card .card-content .card-title, .white-card .card-content .card-title {
       line-height: 48px; }
-  .card .card-action {
+  .card .card-action, .white-card .card-action {
     border-top: 1px solid rgba(160, 160, 160, 0.2);
     padding: 20px; }
-    .card .card-action a {
+    .card .card-action a, .white-card .card-action a {
       color: #ffab40;
       margin-right: 20px;
       transition: color 0.3s ease;
       text-transform: uppercase; }
-      .card .card-action a:hover {
+      .card .card-action a:hover, .white-card .card-action a:hover {
         color: #ffd8a6; }
-  .card .card-reveal {
+  .card .card-reveal, .white-card .card-reveal {
     padding: 20px;
     position: absolute;
     background-color: #fff;
@@ -5595,7 +5595,7 @@ small {
     height: 100%;
     z-index: 1;
     display: none; }
-    .card .card-reveal .card-title {
+    .card .card-reveal .card-title, .white-card .card-reveal .card-title {
       cursor: pointer;
       display: block; }
 
@@ -8234,5 +8234,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 @media (min-height: 40.125em) {
   .picker--time .picker__box {
     margin-bottom: 5em; } }
+
+.white-card {
+  border-top: 1px solid #e0e0e0; }
 
 /*# sourceMappingURL=app.css.map */
