@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    $users = App\User::with('friendsOut', 'friendsIn')->get();
+    $users = App\User::with('clans', 'friendsOut', 'friendsIn')->get();
 
     return view('results', compact('users'));
 });

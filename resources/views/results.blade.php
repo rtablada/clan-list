@@ -13,6 +13,7 @@
                     <th>Username</th>
                     <th>Score</th>
                     <th>Friends</th>
+                    <th>Clans</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->score}}</td>
                         <td>{{count($user->friends)}}</td>
+                        <td>{{count($user->clans)}}</td>
                     </tr>
                 @endforeach
             </tbody>

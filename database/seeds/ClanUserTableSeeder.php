@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\User;
 
-class FriendsTableSeeder extends Seeder
+class ClanUserTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,17 +17,17 @@ class FriendsTableSeeder extends Seeder
         $faker = \Faker\Factory::create();
         $faker->seed(1234);
 
-        for ($i=1; $i <= 50; $i++) {
+        for ($i=1; $i <= 100; $i++) {
             $user = User::find($i);
 
             if($user) {
                 $friends = [];
 
-                for ($x = 0; $x < $faker->numberBetween(0, 10); $x++) {
-                    $friends[] = $faker->biasedNumberBetween($i, 100);
+                for ($x = 0; $x < $faker->numberBetween(1, 3); $x++) {
+                    $friends[] = $faker->biasedNumberBetween(1, 20);
                 }
 
-                $user->friendsOut()->sync($friends);
+                $user->clans()->sync($friends);
             }
         }
     }
