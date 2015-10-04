@@ -18,27 +18,14 @@ Route::get('/', function () {
     if ($orderBy = Request::get('order_by')) {
       switch ($orderBy) {
         case 'friends':
-          $query = $query
-            ->groupBy('users.id')
-            ->leftJoin('friends', function($join) {
-              $join->on('users.id', '=', 'friends.user_id_1')
-                ->orOn('users.id', '=', 'friends.user_id_2');
-              })
-            ->orderBy(DB::raw('COUNT(friends.user_id_1)'), 'desc');
+          $query = $query->orderByFriends();
           break;
         case 'clans':
-          $query = $query
-            ->groupBy('users.id')
-            ->leftJoin('clan_user', function($join) {
-              $join->on('users.id', '=', 'clan_user.user_id');
-              })
-            ->orderBy(DB::raw('COUNT(clan_user.user_id)'), 'desc');
+          $query = $query->orderByClans();
           break;
 
         default:
-          $query = $query
-            ->groupBy('users.id')
-            ->orderBy($orderBy, 'desc');
+          $query = $query->orderBy($orderBy, 'desc');
           break;
       }
 

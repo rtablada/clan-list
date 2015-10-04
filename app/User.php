@@ -37,4 +37,25 @@ class User extends Model
     {
         return $this->friendsOut->merge($this->friendsIn);
     }
+
+    public function scopeOrderByFriends($query)
+    {
+      return $query
+        ->groupBy('users.id')
+        ->leftJoin('friends', function($join) {
+          $join->on('users.id', '=', 'friends.user_id_1')
+            ->orOn('users.id', '=', 'friends.user_id_2');
+          })
+        ->orderBy(\DB::raw('COUNT(friends.user_id_1)'), 'desc');
+    }
+
+    public function scopeOrderByClans($query)
+    {
+      return $query
+        ->groupBy('users.id')
+        ->leftJoin('clan_user', function($join) {
+          $join->on('users.id', '=', 'clan_user.user_id');
+          })
+        ->orderBy(\DB::raw('COUNT(clan_user.user_id)'), 'desc');
+    }
 }
