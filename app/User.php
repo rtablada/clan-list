@@ -18,8 +18,18 @@ class User extends Model
      */
     protected $fillable = ['name', 'score'];
 
-    public function friends()
+    public function friendsOut()
     {
-        return $this->belongsToMany(User::class, 'friends', 'user_id_1', 'user_id_2');
+        return $this->belongsToMany(User::class, 'friends', 'user_id_1', 'user_id_2', 'friendsIn');
+    }
+
+    public function friendsIn()
+    {
+        return $this->belongsToMany(User::class, 'friends', 'user_id_2', 'user_id_1', 'friendsOut');
+    }
+
+    public function getFriendsAttribute()
+    {
+        return $this->friendsOut->merge($this->friendsIn);
     }
 }

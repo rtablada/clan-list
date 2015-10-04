@@ -21,7 +21,13 @@ class FriendsTableSeeder extends Seeder
             $user = User::find($i);
 
             if($user) {
-                $user->friends()->sync([$faker->biasedNumberBetween($i, 100)]);
+                $friends = [];
+
+                for ($x = 0; $x < $faker->numberBetween(0, 10); $x++) {
+                    $friends[] = $faker->biasedNumberBetween($i, 100);
+                }
+
+                $user->friendsOut()->sync($friends);
             }
         }
     }
