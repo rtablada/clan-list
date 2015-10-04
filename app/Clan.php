@@ -2,14 +2,14 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Clan extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'clans';
 
     /**
      * The attributes that are mass assignable.
@@ -18,8 +18,9 @@ class User extends Model
      */
     protected $fillable = ['name', 'score'];
 
-    public function friends()
+    public function players()
     {
-        return $this->belongsToMany(User::class, 'friends', 'user_id_1', 'user_id_2');
+        return $this->belongsToMany(User::class);
     }
+
 }

@@ -12,5 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $users = App\User::all();
+
+    return view('results', compact('users'));
 });

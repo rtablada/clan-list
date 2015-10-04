@@ -14,6 +14,8 @@ class CreateClansTable extends Migration
     {
         Schema::create('clans', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('tag');
             $table->timestamps();
         });
     }

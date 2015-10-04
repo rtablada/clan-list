@@ -13,8 +13,8 @@ class CreateClanUserTable extends Migration
     public function up()
     {
         Schema::create('clan_user', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+            $table->integer('user_id');
+            $table->integer('clan_id');
         });
     }
 
