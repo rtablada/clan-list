@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Clockwork\Support\Laravel\ClockworkServiceProvider::class,
+        Rtablada\InspectorGadget\GadgetServiceProvider::class,
 
     ],
 

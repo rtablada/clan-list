@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f48aff28386cef73e91abc0a87a63182",
+    "hash": "a43f7c39853838fc271ce6f16c1fa7a8",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -939,6 +939,56 @@
                 "shell"
             ],
             "time": "2015-07-16 15:26:57"
+        },
+        {
+            "name": "rtablada/inspector-gadget",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rtablada/inspector-gadget.git",
+                "reference": "f3cc3858b6738b0b86ec6bd054835ccacca95ceb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rtablada/inspector-gadget/zipball/f3cc3858b6738b0b86ec6bd054835ccacca95ceb",
+                "reference": "f3cc3858b6738b0b86ec6bd054835ccacca95ceb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "~5",
+                "illuminate/support": "~5",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rtablada\\InspectorGadget\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Tablada",
+                    "email": "ryan@embergrep.com",
+                    "homepage": "http://ryantablada.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A web-component inspired data flow library for Laravel views.",
+            "homepage": "https://github.com/rtablada/inspector-gadget",
+            "keywords": [
+                "inspector-gadget",
+                "rtablada"
+            ],
+            "time": "2015-03-08 22:09:40"
         },
         {
             "name": "swiftmailer/swiftmailer",
