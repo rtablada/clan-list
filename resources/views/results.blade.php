@@ -5,7 +5,7 @@
 @section('content')
 <div class="row">
   <div class="col s12 m3">
-    @include('partials.clans-for-users')
+    @gadget('ClansListFromUsers', $users)
   </div>
 
   <div class="col s12 m6">
