@@ -33,8 +33,6 @@ Route::get('/', function () {
 
     $users = $query->paginate(25);
 
-    $topTen = App\User::orderBy('score', 'desc')->limit(10)->get();
-
     $filterOptions = [
       'Order By' => ['Name', 'Score', 'Friends', 'Clans'],
     ];
