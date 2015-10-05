@@ -33,9 +33,6 @@ Route::get('/', function () {
 
     $users = $query->paginate(25);
 
-    $filterOptions = [
-      'Order By' => ['Name', 'Score', 'Friends', 'Clans'],
-    ];
 
     return view('results', compact('users', 'topTen', 'filterOptions'));
 });
