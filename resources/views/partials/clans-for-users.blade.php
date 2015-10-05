@@ -1,5 +1,3 @@
-@inject('clanManager', 'App\Services\ClanManager')
-
 <ul class="collection with-header">
   <li class="collection-header"><h4>Clans</h4></li>
   @foreach($clans as $clan)
