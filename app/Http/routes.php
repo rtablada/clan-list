@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
 
-    $query = new App\User();
+    $query = App\User::with('clans', 'friendsIn', 'friendsOut');
 
     if ($orderBy = Request::get('order_by')) {
       switch ($orderBy) {
