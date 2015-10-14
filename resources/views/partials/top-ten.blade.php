@@ -7,3 +7,5 @@
     </li>
   @endforeach
 </ul>
+
+@gadget('ClansListFromUsers', $users)
