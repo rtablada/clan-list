@@ -7,7 +7,9 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "itsgoingd/clockwork": "^1.9"
+        "itsgoingd/clockwork": "^1.9",
+        "rtablada/inspector-gadget": "^1.0",
+        "rtablada/version-master": "^1.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
