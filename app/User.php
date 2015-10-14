@@ -46,7 +46,7 @@ class User extends Model
           $join->on('users.id', '=', 'friends.user_id_1')
             ->orOn('users.id', '=', 'friends.user_id_2');
           })
-        ->orderBy(\DB::raw('COUNT(friends.user_id_1)'), 'desc');
+        ->orderBy(\DB::raw('COUNT(*)'), 'desc');
     }
 
     public function scopeOrderByClans($query)
@@ -56,6 +56,6 @@ class User extends Model
         ->leftJoin('clan_user', function($join) {
           $join->on('users.id', '=', 'clan_user.user_id');
           })
-        ->orderBy(\DB::raw('COUNT(clan_user.user_id)'), 'desc');
+        ->orderBy(\DB::raw('COUNT(*)'), 'desc');
     }
 }
