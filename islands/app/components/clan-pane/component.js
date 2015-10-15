@@ -11,4 +11,18 @@ export default Ember.Component.extend({
 
     return clans;
   }),
+
+  actions: {
+    showClanDetails(clan) {
+      Ember.$.ajax({
+        url: `/clans/${clan.id}`,
+      }).then((result) => {
+        this.set('clanDetail', result);
+      });
+    },
+
+    hideDetail() {
+      this.set('clanDetail', null);
+    },
+  },
 });

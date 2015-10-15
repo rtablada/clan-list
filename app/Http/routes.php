@@ -36,3 +36,7 @@ Route::get('/', function () {
 
     return view('results', compact('users', 'topTen', 'filterOptions'));
 });
+
+Route::get('clans/{id}', function(App\Clan $clan, $id) {
+    return $clan->with('players')->find($id);
+});
