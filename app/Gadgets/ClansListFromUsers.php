@@ -15,6 +15,8 @@ class ClansListFromUsers
   {
     $clans = $this->manager->getClansForUsers($users);
 
-    return view('partials.clans-for-users', compact('clans'));
+    $data = $clans->toJson();
+
+    return "<div data-component=\"clan-pane\" data-attrs='{\"data\": {$data}}'></div>";
   }
 }

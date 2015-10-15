@@ -1,0 +1,1 @@
+../islands/dist/assets/vendor.js
