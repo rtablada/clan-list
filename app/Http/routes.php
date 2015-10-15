@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
+    return view('ember-app');
+});
+
+Route::get('users', function () {
 
     $query = App\User::with('clans', 'friendsIn', 'friendsOut');
 
