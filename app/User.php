@@ -18,6 +18,8 @@ class User extends Model
      */
     protected $fillable = ['name', 'score'];
 
+    protected $hidden = ['friends_in', 'friends_out'];
+
     public function clans()
     {
         return $this->belongsToMany(Clan::class);

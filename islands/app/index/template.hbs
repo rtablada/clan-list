@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col s12 m3">
+    {{clan-pane users=model.data}}
+  </div>
+
+  <div class="col s12 m6">
+    <div class="row">
+      @gadget('FilterOptionsBar')
+    </div>
+    <div class="row white-card">
+      <table class="card-content">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Score</th>
+            <th>Friends</th>
+            <th>Clans</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model.data as |user|}}
+            <tr>
+              <td>{{user.name}}</td>
+              <td>{{user.score}}</td>
+              <td>{{int-add (arr-length user.friends_in) (arr-length user.friends_out)}}</td>
+              <td>{{arr-length user.clans}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="col s12 m3">
+    <div class="row">
+      @gadget('TopTenUsers')
+    </div>
+    <div class="row">
+      Friends
+    </div>
+  </div>
+</div>

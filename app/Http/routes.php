@@ -35,10 +35,7 @@ Route::get('users', function () {
 
     }
 
-    $users = $query->paginate(25);
-
-
-    return view('results', compact('users', 'topTen', 'filterOptions'));
+    return $query->paginate(25);
 });
 
 Route::get('clans/{id}', function(App\Clan $clan, $id) {
