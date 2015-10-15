@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  clans: Ember.computed('data', function() {
+  clans: Ember.computed('users', function() {
     const users = this.get('users');
     const clans = [];
 

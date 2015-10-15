@@ -1,0 +1,22 @@
+{{#each options as |option|}}
+  <ul id="dropdown-test" class="dropdown-content">
+    {{#each option.values as |value|}}
+      <li class="{{if (eq (str-dasherize value) orderBy)  'active' null}}">
+        {{#link-to 'index' (query-params orderBy=(str-dasherize value))}}{{value}}{{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+{{/each}}
+<nav>
+  <div class="nav-wrapper teal">
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      {{#each options as |option|}}
+        <li class="{{if orderBy 'active' null}}">
+          <a class="dropdown-button" href="#!" data-activates="dropdown-test">
+          {{option.name}}<i class="material-icons right">arrow_drop_down</i>
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</nav>
