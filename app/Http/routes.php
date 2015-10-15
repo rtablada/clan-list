@@ -35,7 +35,7 @@ Route::get('users', function () {
 
     }
 
-    return $query->paginate(25);
+    return $query->paginate(Request::get('per_page', 25));
 });
 
 Route::get('clans/{id}', function(App\Clan $clan, $id) {
