@@ -10,3 +10,11 @@
 nav {
   margin: 0.5rem 0 0;
 }
+
+.clan-item {
+  cursor: pointer;
+
+  &:hover {
+    background: #eee;
+  }
+}

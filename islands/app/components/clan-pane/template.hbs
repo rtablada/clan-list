@@ -14,7 +14,7 @@
   <ul class="collection with-header">
     <li class="collection-header"><h4>Clans</h4></li>
     {{#each clans as |clan|}}
-      <li class="collection-item" {{action 'showClanDetails' clan.value}}>
+      <li class="collection-item clan-item" {{action 'showClanDetails' clan.value}}>
         {{clan.value.name}} -
         <span class="grey-text text-lighten-1">{{clan.value.tag}}</span>
         <span class="badge">{{clan.count}}</span>

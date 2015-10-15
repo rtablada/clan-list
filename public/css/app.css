@@ -8241,4 +8241,9 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 nav {
   margin: 0.5rem 0 0; }
 
+.clan-item {
+  cursor: pointer; }
+  .clan-item:hover {
+    background: #eee; }
+
 /*# sourceMappingURL=app.css.map */
